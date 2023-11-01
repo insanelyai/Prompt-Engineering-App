@@ -34,7 +34,7 @@
             </button>
 
             <button type="submit" class="w-[150px] p-2 px-3 font-bold bg-[#F5C2C2] rounded-xl border border-[3.1px] border-[#090909]" 
-            value="This prompt will generate captions" onclick="submitValues(this.value)">
+            value="Write a blog article on:" onclick="submitValues(this.value)">
                 Blog Articles
             </button>
 
@@ -58,14 +58,16 @@
 
     <section class="w-full h-auto px-10">
         {% if fetched_data %}
-			<h2>Response:</h2>
-			<p>{{ fetched_data }}</p>
+			<h2 class="text-white font-black text-2xl md:text-3xl pb-10">Response:</h2>
+			<p class="text-white font-bold text-xl md:text-2xl pb-10" id="response">{{ fetched_data }}</p>
 		{% endif %}
 
-        <h2 class="text-white font-black text-2xl md:text-3xl pb-10">Response</h2>
+<!--
 
-        <p class="text-white font-bold text-xl md:text-2xl pb-10" id="response"></p>
+        <<h2 class="text-white font-black text-2xl md:text-3xl pb-10">Response</h2>
 
+        <p class="text-white font-bold text-xl md:text-2xl pb-10" id="response"></p>>
+-->
     </section>
     
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
@@ -122,9 +124,10 @@ var typewriterOne = new Typewriter(res, {
 });
 
 var res_data = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum dapibus lobortis. Duis leo augue, consequat sed dolor in, lobortis dictum turpis. Nulla gravida tempus gravida. Ut ut lectus sit amet ipsum porttitor viverra. Curabitur consequat sapien et velit dapibus efficitur. Integer sit amet fermentum tortor, a vulputate magna. Nunc quis volutpat nisi, et volutpat sem. Maecenas dignissim dictum velit, sit amet congue nunc blandit at. Vestibulum elit ipsum, rhoncus a efficitur efficitur, venenatis eget nulla."
+var type_res = '{{ fetched_data }}'
 
 typewriterOne
-  .typeString(res_data)
+  .typeString(type_res)
   .start();
     </script>
 </body>
